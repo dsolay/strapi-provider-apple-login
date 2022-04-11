@@ -1,0 +1,6 @@
+dist
+.cache
+build
+public
+**/node_modules/**
+**/documentation/**

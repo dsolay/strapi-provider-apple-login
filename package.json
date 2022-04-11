@@ -1,0 +1,69 @@
+{
+  "name": "apple",
+  "version": "1.0.0",
+  "description": "Manage apple login/signup",
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "yarn eslint && yarn run prettier:check",
+    "lint:fix": "yarn run eslint:fix && yarn run prettier:fix",
+    "eslint": "eslint --cache --ext .js --ignore-path .gitignore .",
+    "eslint:fix": "yarn eslint --fix",
+    "prettier:check": "prettier --check --no-error-on-unmatched-pattern '**/*.js'",
+    "prettier:fix": "prettier --write --no-error-on-unmatched-pattern '**/*.js'"
+  },
+  "strapi": {
+    "name": "apple",
+    "description": "Manage apple login/signup",
+    "kind": "plugin"
+  },
+  "dependencies": {
+    "apple-sign-in-rest": "^1.0.3",
+    "async": "^3.2.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/preset-react": "^7.16.7",
+    "@strapi/helper-plugin": "^4.1.7",
+    "@strapi/icons": "^0.0.1-alpha.79",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsonc": "^2.2.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-unicorn": "^42.0.0",
+    "husky": "^7.0.4",
+    "jsonc-eslint-parser": "^2.1.0",
+    "lint-staged": "^12.3.7",
+    "prettier": "^2.6.1"
+  },
+  "peerDependencies": {
+    "@strapi/strapi": "^4.0.0"
+  },
+  "author": {
+    "name": "Roman Gonzalez",
+    "email": "roman.gonzalez.ea@gmail.com",
+    "url": "https://github.com/dsolay"
+  },
+  "maintainers": [
+    {
+      "name": "Roman Gonzalez",
+      "email": "roman.gonzalez.ea@gmail.com",
+      "url": "https://github.com/dsolay"
+    }
+  ],
+  "files": [
+    "admin",
+    "server",
+    "strapi-admin.js",
+    "strapi-server.js"
+  ],
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
