@@ -20,7 +20,8 @@ module.exports = () => ({
       keyIdentifier: getConfig('keyIdentifier'),
     }
 
-    if (getConfig('privateKey')) config.privateKey = getConfig('privateKey')
+    if (getConfig('privateKey'))
+      config.privateKey = getConfig('privateKey').replace(/\\n/g, '\n')
     else config.privateKeyPath = `${__dirname}/${getConfig('privateKeyPath')}`
 
     const appleSignIn = new AppleSignIn(config)
