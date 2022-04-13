@@ -4,6 +4,7 @@ module.exports = [
     path: '/callback',
     handler: 'appleController.callback',
     config: {
+      auth: false,
       policies: [],
     },
   },

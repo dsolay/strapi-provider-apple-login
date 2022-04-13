@@ -1,6 +1,13 @@
 'use strict'
 
 module.exports = {
-  default: {},
+  default: {
+    siteBaseUrl: '',
+    clientId: '',
+    teamId: '',
+    keyIdentifier: '',
+    privateKey: '',
+    privateKeyPath: '',
+  },
   validator() {},
 }
