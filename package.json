@@ -55,6 +55,10 @@
       "url": "https://github.com/dsolay"
     }
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsolay/strapi-provider-apple-login.git"
+  },
   "files": [
     "admin",
     "server",
