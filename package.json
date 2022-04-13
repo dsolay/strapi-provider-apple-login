@@ -1,5 +1,5 @@
 {
-  "name": "apple",
+  "name": "strapi-provider-apple-login",
   "version": "1.0.0",
   "description": "Manage apple login/signup",
   "scripts": {
