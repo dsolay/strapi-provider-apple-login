@@ -1,5 +1,4 @@
 import { prefixPluginTranslations } from '@strapi/helper-plugin'
-import { map } from 'async'
 import pluginPackage from '../../package.json'
 import pluginId from './pluginId'
 import Initializer from './components/Initializer'
@@ -41,21 +40,23 @@ export default {
 
   bootstrap() {},
   async registerTrads({ locales }) {
-    const importedTrads = await map(locales.map, async (locale) => {
-      const result = {
-        data: {},
-        locale,
-      }
-
-      try {
-        const { default: data } = await import(`./translations/${locale}.json`)
-
-        result.data = prefixPluginTranslations(data, pluginId)
-        return result
-      } catch {
-        return result
-      }
-    })
+    const importedTrads = await Promise.all(
+      locales.map((locale) => {
+        return import(`./translations/${locale}.json`)
+          .then(({ default: data }) => {
+            return {
+              data: prefixPluginTranslations(data, pluginId),
+              locale,
+            }
+          })
+          .catch(() => {
+            return {
+              data: {},
+              locale,
+            }
+          })
+      }),
+    )
 
     return importedTrads
   },
